@@ -7,8 +7,8 @@ import json
 import textwrap
 
 chat_client = AzureOpenAI(
-    azure_endpoint="https://doc-chatbot-2.openai.azure.com",
-    api_key="408bf0b20e65413a8003568032f188b5",
+    azure_endpoint=st.secrets["AZURE_OPENAI_ENDPOINT"],
+    api_key=st.secrets["AZURE_OPENAI_KEY"],
     api_version="2023-05-15"
 )
 
