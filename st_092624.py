@@ -6,11 +6,9 @@ import streamlit as st
 import json
 import textwrap
 
-load_dotenv()
-
 chat_client = AzureOpenAI(
-    azure_endpoint = os.getenv("AZURE_OPENAI_ENDPOINT"),
-    api_key= os.getenv("AZURE_OPENAI_KEY"),
+    azure_endpoint=st.secrets["AZURE_OPENAI_ENDPOINT"],
+    api_key=st.secrets["AZURE_OPENAI_KEY"],
     api_version="2023-05-15"
 )
 
