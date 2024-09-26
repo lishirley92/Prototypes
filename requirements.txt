@@ -1,5 +1,4 @@
-streamlit
-numpy
-pandas
-os
-openai
+streamlit==1.30.0
+numpy==1.26.4
+pandas==2.1.4 
+openai==1.37.0
