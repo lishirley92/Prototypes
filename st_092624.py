@@ -3,7 +3,6 @@ import os
 import openai
 from openai import AzureOpenAI
 import streamlit as st
-from dotenv import load_dotenv
 import json
 import textwrap
 
