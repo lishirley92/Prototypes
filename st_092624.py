@@ -762,50 +762,50 @@ if st.button('Analyze your text for audience here'):
 
         st.write('All feedback for audience generated successfully!')
 
-if st.button('Analyze your text for page structure here'):
-    with st.spinner('Generating page structure feedback...'):
+# if st.button('Analyze your text for page structure here'):
+#     with st.spinner('Generating page structure feedback...'):
 
-        for item in guidelines['structure_guidelines'].items():
-            # Make multiple calls to the API to generate feedback
-            ai_response = get_aoai_response(item[1], user_input)
-            ai_wrapped = wrap_json_strings(ai_response, width=80)
-            st.success(f"Feedback generated for {item[1]['Title']}")
-            st.text(ai_wrapped)
+#         for item in guidelines['structure_guidelines'].items():
+#             # Make multiple calls to the API to generate feedback
+#             ai_response = get_aoai_response(item[1], user_input)
+#             ai_wrapped = wrap_json_strings(ai_response, width=80)
+#             st.success(f"Feedback generated for {item[1]['Title']}")
+#             st.text(ai_wrapped)
 
-        st.write('All feedback for page structure generated successfully!')
+#         st.write('All feedback for page structure generated successfully!')
 
-if st.button('Analyze your text for word choice here'):
-    with st.spinner('Generating word choice feedback...'):
+# if st.button('Analyze your text for word choice here'):
+#     with st.spinner('Generating word choice feedback...'):
 
-        for item in guidelines['word_choice_guidelines'].items():
-            # Make multiple calls to the API to generate feedback
-            ai_response = get_aoai_response(item[1], user_input)
-            ai_wrapped = wrap_json_strings(ai_response, width=80)
-            st.success(f"Feedback generated for {item[1]['Title']}")
-            st.text(ai_wrapped)
+#         for item in guidelines['word_choice_guidelines'].items():
+#             # Make multiple calls to the API to generate feedback
+#             ai_response = get_aoai_response(item[1], user_input)
+#             ai_wrapped = wrap_json_strings(ai_response, width=80)
+#             st.success(f"Feedback generated for {item[1]['Title']}")
+#             st.text(ai_wrapped)
 
-        st.write('All feedback for word choice generated successfully!')
+#         st.write('All feedback for word choice generated successfully!')
 
-if st.button('Analyze your text for miscellaneous guidelines here'):
-    with st.spinner('Generating feedback for miscellaneous guidelines...'):
+# if st.button('Analyze your text for miscellaneous guidelines here'):
+#     with st.spinner('Generating feedback for miscellaneous guidelines...'):
 
-        for item in guidelines['misc_guidelines'].items():
-            # Make multiple calls to the API to generate feedback
-            ai_response = get_aoai_response(item[1], user_input)
-            ai_wrapped = wrap_json_strings(ai_response, width=80)
-            st.success(f"Feedback generated for {item[1]['Title']}")
-            st.text(ai_wrapped)
+#         for item in guidelines['misc_guidelines'].items():
+#             # Make multiple calls to the API to generate feedback
+#             ai_response = get_aoai_response(item[1], user_input)
+#             ai_wrapped = wrap_json_strings(ai_response, width=80)
+#             st.success(f"Feedback generated for {item[1]['Title']}")
+#             st.text(ai_wrapped)
 
-        st.write('All feedback for miscellaneous guidelines generated successfully!')
+#         st.write('All feedback for miscellaneous guidelines generated successfully!')
 
-if st.button('If you need AsciiDoc Syntax, ask here'):
-    with st.spinner('Generating AsciiDoc Syntax...'):
+# if st.button('If you need AsciiDoc Syntax, ask here'):
+#     with st.spinner('Generating AsciiDoc Syntax...'):
 
-        for item in guidelines['provide_asciidoc_syntax'].items():
-            # Make multiple calls to the API to generate feedback
-            ai_response = get_aoai_response(item[1], user_input)
-            ai_wrapped = wrap_json_strings(ai_response, width=80)
-            st.success(f"Feedback generated for {item[1]['Title']}")
-            st.text(ai_wrapped)
+#         for item in guidelines['provide_asciidoc_syntax'].items():
+#             # Make multiple calls to the API to generate feedback
+#             ai_response = get_aoai_response(item[1], user_input)
+#             ai_wrapped = wrap_json_strings(ai_response, width=80)
+#             st.success(f"Feedback generated for {item[1]['Title']}")
+#             st.text(ai_wrapped)
 
         st.write('AsciiDoc syntax generated successfully!')
