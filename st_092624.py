@@ -720,7 +720,7 @@ st.write("This is a prototype of an authoring assistant (Docs Copilot) for techn
 user_input = st.text_area("Enter your text here:")
 
 # Various to trigger the process
-if st.button('If your text is a title, analyze it here'):
+if st.button('If your text contains a title, analyze it'):
     with st.spinner('Generating title feedback...'):
 
         for item in guidelines['page_title_guidelines'].items():
@@ -732,7 +732,7 @@ if st.button('If your text is a title, analyze it here'):
 
         st.write('All feedback for page titles generated successfully!')
 
-if st.button('If your text contains a page lead, analyze it here'):
+if st.button('If your text contains a page lead, analyze it'):
     with st.spinner('Generating page lead feedback...'):
 
         for item in guidelines['page_lead_guidelines'].items():
@@ -744,7 +744,7 @@ if st.button('If your text contains a page lead, analyze it here'):
 
         st.write('All feedback for page leads generated successfully!')
 
-if st.button('Analyze your text for writing clarity here'):
+if st.button('Analyze your text for writing clarity'):
     with st.spinner('Generating writing clarity feedback...'):
 
         for item in guidelines['clear_writing_guidelines'].items():
@@ -756,7 +756,7 @@ if st.button('Analyze your text for writing clarity here'):
 
         st.write('All feedback for writing clarity generated successfully!')
 
-if st.button('Analyze your text for audience here'):
+if st.button('Analyze your text for audience'):
     with st.spinner('Generating audience feedback...'):
 
         for item in guidelines['audience_guidelines'].items():
@@ -768,7 +768,7 @@ if st.button('Analyze your text for audience here'):
 
         st.write('All feedback for audience generated successfully!')
 
-if st.button('Analyze your text for page structure here'):
+if st.button('Analyze your text for page structure'):
     with st.spinner('Generating page structure feedback...'):
 
         for item in guidelines['structure_guidelines'].items():
@@ -780,7 +780,7 @@ if st.button('Analyze your text for page structure here'):
 
         st.write('All feedback for page structure generated successfully!')
 
-if st.button('Analyze your text for word choice here'):
+if st.button('Analyze your text for word choice'):
     with st.spinner('Generating word choice feedback...'):
 
         for item in guidelines['word_choice_guidelines'].items():
@@ -792,7 +792,7 @@ if st.button('Analyze your text for word choice here'):
 
         st.write('All feedback for word choice generated successfully!')
 
-if st.button('Analyze your text for miscellaneous guidelines here'):
+if st.button('Analyze your text for miscellaneous guidelines'):
     with st.spinner('Generating feedback for miscellaneous guidelines...'):
 
         for item in guidelines['misc_guidelines'].items():
