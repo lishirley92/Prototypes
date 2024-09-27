@@ -14,22 +14,28 @@ chat_client = AzureOpenAI(
 
 engine="chat-4o"
 
-SYSTEM_PROMPT_0924 = """
-You are an AI copilot tasked with helping improve technical documentation. The user will give you a writing guideline, and some input text that is expected to follow the writing guideline. Your task is to evaluate whether or not the input text follows the guideline in your output response.
+sys_prompt_path = 'SYSTEM_PROMPT_0927.txt'
 
-GUIDELINE
-The guideline will be structured as a JSON and will contain the following five components as keys: "Title", "Description", "Rules", "Examples of Good Writing", "Examples of Bad Writing."
+# Open the file and read its contents into a variable
+with open(sys_prompt_path, 'r', encoding='utf-8') as file:
+    SYSTEM_PROMPT = file.read()
 
-INPUT TEXT
-The input text will be an excerpt from some technical documentation that may need revision. The input text may be one sentence, one paragraph, or a few paragraphs. It will be written in AsciiDoctor format.
+# SYSTEM_PROMPT = """
+# You are an AI copilot tasked with helping improve technical documentation. The user will give you a writing guideline, and some input text that is expected to follow the writing guideline. Your task is to evaluate whether or not the input text follows the guideline in your output response.
 
-OUTPUT RESPONSE
-Your task is to evaluate whether or not the input text follows the guideline. Please output your response as a JSON with the following components as keys: "Title" (of the Guideline), "Evaluation", "Instance 1" (if applicable), "Instance 2" (if applicable).
+# GUIDELINE
+# The guideline will be structured as a JSON and will contain the following five components as keys: "Title", "Description", "Rules", "Examples of Good Writing", "Examples of Bad Writing."
 
-- If the input text follows the guideline, under "Evaluation" write "No issues found." Otherwise, write "Issues found."
-- If the input text does not follow the guideline, choose 1-2 instances to focus on. 
-- For each instance (Instance 1 and Instance 2), give a short, 1-sentence summary how it violates the guideline. Then provide both the original input text and a revised version that corrects the instance.
-"""
+# INPUT TEXT
+# The input text will be an excerpt from some technical documentation that may need revision. The input text may be one sentence, one paragraph, or a few paragraphs. It will be written in AsciiDoctor format.
+
+# OUTPUT RESPONSE
+# Your task is to evaluate whether or not the input text follows the guideline. Please output your response as a JSON with the following components as keys: "Title" (of the Guideline), "Evaluation", "Instance 1" (if applicable), "Instance 2" (if applicable).
+
+# - If the input text follows the guideline, under "Evaluation" write "No issues found." Otherwise, write "Issues found."
+# - If the input text does not follow the guideline, choose 1-2 instances to focus on. 
+# - For each instance (Instance 1 and Instance 2), give a short, 1-sentence summary how it violates the guideline. Then provide both the original input text and a revised version that corrects the instance.
+# """
 
 def get_aoai_response(guideline, user_input):
     user_prompt=f"""
@@ -40,7 +46,7 @@ def get_aoai_response(guideline, user_input):
     
     completion = chat_client.chat.completions.create(
         model=engine,
-        messages = [{"role":"system", "content":SYSTEM_PROMPT_0924},
+        messages = [{"role":"system", "content":SYSTEM_PROMPT},
             {"role":"user", "content":user_prompt}],
         temperature=0,
         max_tokens=800,
