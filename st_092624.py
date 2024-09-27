@@ -16,7 +16,7 @@ chat_client = AzureOpenAI(
 engine="chat-4o"
 
 sys_prompt_path = 'SYSTEM_PROMPT_0927.txt'
-guidelines_path = 'guidelines_092724.csv'
+guidelines_path = 'GUIDELINES_092724.csv'
 
 # Open the file and read its contents into a variable
 with open(sys_prompt_path, 'r', encoding='utf-8') as file:
