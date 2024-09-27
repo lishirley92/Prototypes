@@ -16,6 +16,7 @@ chat_client = AzureOpenAI(
 engine="chat-4o"
 
 sys_prompt_path = 'SYSTEM_PROMPT_0927.txt'
+guidelines_path = 'guidelines_092724.csv'
 
 # Open the file and read its contents into a variable
 with open(sys_prompt_path, 'r', encoding='utf-8') as file:
@@ -60,7 +61,7 @@ def get_aoai_response(guideline, user_input):
     return response
 
 # Read the CSV file and convert it back to a JSON-like structure
-with open('guidelines_092724.csv', 'r', encoding='utf-8') as csvfile:
+with open(guidelines_path, 'r', encoding='utf-8') as csvfile:
     reader = csv.DictReader(csvfile)
     json_data = {}
     for row in reader:
