@@ -736,9 +736,13 @@ st.title('NADIAA - NetApp Docs Integrated Authoring Assistant')
 
 st.write("This is a prototype of an authoring assistant (Docs Copilot) for technical writers. It's trained on select features of the NetAppDocs Style Guide, such as page titles and leads, writing clarity, word choice, and audience. This tool is collaboratively designed by NetApp's IE & DCS teams, and is powered by Azure OpenAI's Chat API.")
 
-st.markdown(f"[{System Prompt}]({https://github.com/lishirley92/Prototypes/blob/main/SYSTEM_PROMPT_0927.txt})", unsafe_allow_html=True)
-st.markdown(f'<a href="{https://github.com/lishirley92/Prototypes/blob/main/GUIDELINES_092724.csv}" target="_blank">{Style Guide Prompts}</a>', unsafe_allow_html=True)
+system_url = "https://github.com/lishirley92/Prototypes/blob/main/SYSTEM_PROMPT_0927.txt"
+system_link_text = "System Prompt"
+st.markdown(f"[{system_link_text}]({system_url})", unsafe_allow_html=True)
 
+style_url = "https://github.com/lishirley92/Prototypes/blob/main/GUIDELINES_092724.csv"
+style_link_text = "Style Guide Prompts"
+st.markdown(f'<a href="{style_url}" target="_blank">{style_link_text}</a>', unsafe_allow_html=True)
 # Text input
 user_input = st.text_area("Enter your text here:")
 
